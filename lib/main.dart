@@ -1,7 +1,7 @@
+import 'package:drivesmart/core/routers/app_router.dart';
+import 'package:drivesmart/core/routers/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import 'feature/login/login_page_widght.dart';
 
 void main() => runApp(MyApp());
 
@@ -26,11 +26,14 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.blue,
             textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
           ),
-          home: child,
+          // home: child,
+          initialRoute: Routers.home,
+          onGenerateRoute: App_Roters.genrateRoute,
         );
       },
-      child: Directionality(
-          textDirection: TextDirection.rtl, child: const LoginPage()),
+
+      // child: Directionality(
+      //     textDirection: TextDirection.rtl, child: const LoginPage()),
     );
   }
 }
