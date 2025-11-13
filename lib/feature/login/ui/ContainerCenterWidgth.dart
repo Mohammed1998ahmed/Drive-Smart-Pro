@@ -1,3 +1,5 @@
+import 'package:drivesmart/core/helper/extenations.dart';
+import 'package:drivesmart/core/routers/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -105,7 +107,9 @@ class ContainerCenterWidgth extends StatelessWidget {
                 ),
                 backgroundColor:
                     MaterialStatePropertyAll(Colors_App.primaryColor)),
-            onPressed: () {},
+            onPressed: () {
+              context.pushNamed(Routers.home);
+            },
             child: Text(
               'تسجيل دخول',
               style: TextStyle(fontSize: 40.sp, color: Colors_App.whiteColor),
