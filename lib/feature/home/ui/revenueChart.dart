@@ -170,7 +170,7 @@ class RevenueChart extends StatelessWidget {
         BarChartRodData(
           toY: y,
           color: Colors.blueAccent,
-          width: 25,
+          width: 150.w,
           borderRadius: BorderRadius.circular(6),
           backDrawRodData: BackgroundBarChartRodData(
             show: true,
