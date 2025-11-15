@@ -1,3 +1,4 @@
+import 'package:drivesmart/feature/home/logic/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -6,10 +7,11 @@ import '../../../core/widgets/sizebox_widght.dart';
 import 'drwerTopTextWidght.dart';
 
 class DrawerWidght extends StatelessWidget {
-  const DrawerWidght({
+  DrawerWidght({
     super.key,
+    required this.cubit,
   });
-
+  final HomeCubit cubit;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -45,7 +47,9 @@ class DrawerWidght extends StatelessWidget {
             radius: 360.r,
           ),
           ElevatedButtonWidght(
-            onPressed: () {},
+            onPressed: () {
+              cubit.changePages(0);
+            },
             iconData: Icons.home_max_outlined,
             nameButtom: ' لوحة التحكم ',
             numberItem: false,
@@ -70,7 +74,10 @@ class DrawerWidght extends StatelessWidget {
             isTogelColorBackground: false,
           ),
           ElevatedButtonWidght(
-            onPressed: () {},
+            onPressed: () {
+              cubit.changePages(4);
+              // context.pushNamed(Routers.reportsAndStatisticsPage);
+            },
             iconData: Icons.report_outlined,
             nameButtom: '   التقارير و الايرادات  ',
             numberItem: false,

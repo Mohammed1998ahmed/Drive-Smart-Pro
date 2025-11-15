@@ -1,7 +1,10 @@
 import 'package:drivesmart/feature/home/homePage.dart';
+import 'package:drivesmart/feature/home/logic/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../feature/login/login_page_widght.dart';
+import '../../feature/reports_and_statistics/reportsAndStatistics.dart';
 import 'router.dart';
 
 class App_Roters {
@@ -10,11 +13,20 @@ class App_Roters {
       case Routers.login:
         return MaterialPageRoute(
             builder: (_) => const Directionality(
-                textDirection: TextDirection.rtl, child: const LoginPage()));
+                textDirection: TextDirection.rtl, child: LoginPage()));
       case Routers.home:
         return MaterialPageRoute(
             builder: (_) => Directionality(
-                textDirection: TextDirection.rtl, child: const HomePage()));
+                textDirection: TextDirection.rtl,
+                child: BlocProvider(
+                  create: (context) => HomeCubit(),
+                  child: HomePage(),
+                )));
+      case Routers.reportsAndStatisticsPage:
+        return MaterialPageRoute(
+            builder: (_) => const Directionality(
+                textDirection: TextDirection.rtl,
+                child: ReportsAndStatisticsPage()));
       default:
         return MaterialPageRoute(
             builder: (_) => const Scaffold(
