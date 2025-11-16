@@ -1,4 +1,5 @@
 import 'package:drivesmart/core/themes/colors.dart';
+import 'package:drivesmart/feature/user_Management/userManagement.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../reports_and_statistics/reportsAndStatistics.dart';
@@ -24,7 +25,7 @@ class HomePage extends StatelessWidget {
               DrawerWidght(cubit: cubit),
               switch (HomeCubit.get(context).pages) {
                 0 => const homepageBase1(),
-                1 => const homepageBase1(),
+                1 => const UserManagementPage(),
                 2 => const homepageBase1(),
                 3 => const homepageBase1(),
                 4 => const ReportsAndStatisticsPage(),

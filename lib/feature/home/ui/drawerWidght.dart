@@ -47,6 +47,8 @@ class DrawerWidght extends StatelessWidget {
             radius: 360.r,
           ),
           ElevatedButtonWidght(
+            cubit: cubit,
+            numberItems: 0,
             onPressed: () {
               cubit.changePages(0);
             },
@@ -56,10 +58,16 @@ class DrawerWidght extends StatelessWidget {
             isTogelColorBackground: true,
           ),
           ElevatedButtonWidght(
-            onPressed: () {},
+            cubit: cubit,
+            numberItems: 1,
+            onPressed: () {
+              cubit.changePages(1);
+            },
             isTogelColorBackground: false,
           ),
           ElevatedButtonWidght(
+            cubit: cubit,
+            numberItems: 2,
             onPressed: () {},
             iconData: Icons.library_books,
             nameButtom: ' إدارة الدورات ',
@@ -67,6 +75,8 @@ class DrawerWidght extends StatelessWidget {
             isTogelColorBackground: false,
           ),
           ElevatedButtonWidght(
+            cubit: cubit,
+            numberItems: 3,
             onPressed: () {},
             iconData: Icons.book_online,
             nameButtom: ' إدارة الحجوزات ',
@@ -74,6 +84,8 @@ class DrawerWidght extends StatelessWidget {
             isTogelColorBackground: false,
           ),
           ElevatedButtonWidght(
+            cubit: cubit,
+            numberItems: 4,
             onPressed: () {
               cubit.changePages(4);
               // context.pushNamed(Routers.reportsAndStatisticsPage);
@@ -84,6 +96,8 @@ class DrawerWidght extends StatelessWidget {
             isTogelColorBackground: false,
           ),
           ElevatedButtonWidght(
+            cubit: cubit,
+            numberItems: 5,
             onPressed: () {},
             iconData: Icons.cast_for_education,
             nameButtom: '  المحتوى التعليمي ',
@@ -91,6 +105,8 @@ class DrawerWidght extends StatelessWidget {
             isTogelColorBackground: false,
           ),
           ElevatedButtonWidght(
+            cubit: cubit,
+            numberItems: 6,
             onPressed: () {},
             iconData: Icons.question_answer,
             nameButtom: ' بنك الاسئلة ',
@@ -98,6 +114,8 @@ class DrawerWidght extends StatelessWidget {
             isTogelColorBackground: false,
           ),
           ElevatedButtonWidght(
+            cubit: cubit,
+            numberItems: 7,
             onPressed: () {},
             iconData: Icons.settings,
             nameButtom: ' الإعدادات ',
@@ -118,12 +136,16 @@ class ElevatedButtonWidght extends StatelessWidget {
     this.nameButtom,
     this.iconData,
     this.numberItem,
+    required this.cubit,
+    required this.numberItems,
   });
   final bool isTogelColorBackground;
   final Function()? onPressed;
   final String? nameButtom;
   final IconData? iconData;
   final bool? numberItem;
+  final int numberItems;
+  final HomeCubit cubit;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -139,16 +161,15 @@ class ElevatedButtonWidght extends StatelessWidget {
             padding: MaterialStatePropertyAll(
               EdgeInsets.symmetric(horizontal: 40.w, vertical: 60.h),
             ),
-            backgroundColor: MaterialStatePropertyAll(
-                isTogelColorBackground == true
-                    ? Colors_App.primaryColor
-                    : Colors_App.whiteColor)),
+            backgroundColor: MaterialStatePropertyAll(cubit.pages == numberItems
+                ? Colors_App.primaryColor
+                : Colors_App.whiteColor)),
         onPressed: onPressed,
         child: Row(
           children: [
             Icon(
               iconData ?? Icons.person_2_outlined,
-              color: isTogelColorBackground == true
+              color: cubit.pages == numberItems
                   ? Colors_App.whiteColor
                   : Colors_App.primaryColor,
             ),
@@ -156,7 +177,7 @@ class ElevatedButtonWidght extends StatelessWidget {
               nameButtom ?? ' إدراة المستخدمين ',
               style: TextStyle(
                   fontSize: 40.sp,
-                  color: isTogelColorBackground == true
+                  color: cubit.pages == numberItems
                       ? Colors_App.whiteColor
                       : Colors_App.blackColor),
             ),
@@ -167,13 +188,18 @@ class ElevatedButtonWidght extends StatelessWidget {
                     width: 150.w,
                     height: 100.h,
                     decoration: BoxDecoration(
-                        color: Colors_App.primaryColor.withOpacity(0.2),
+                        color: cubit.pages == numberItems
+                            ? Colors_App.whiteColor
+                            : Colors_App.primaryColor.withOpacity(0.2),
                         borderRadius: BorderRadius.circular(30.r)),
                     alignment: Alignment.center,
                     child: Text(
                       '145',
                       style: TextStyle(
-                          color: Colors_App.primaryColor, fontSize: 40.sp),
+                          color: cubit.pages == numberItems
+                              ? Colors_App.blackColor
+                              : Colors_App.primaryColor,
+                          fontSize: 40.sp),
                     ),
                   )
           ],
