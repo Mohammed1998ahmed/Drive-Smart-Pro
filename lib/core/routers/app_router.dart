@@ -1,5 +1,6 @@
 import 'package:drivesmart/feature/home/homePage.dart';
 import 'package:drivesmart/feature/home/logic/cubit/home_cubit.dart';
+import 'package:drivesmart/feature/user_Management/userManagement.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -27,6 +28,10 @@ class App_Roters {
             builder: (_) => const Directionality(
                 textDirection: TextDirection.rtl,
                 child: ReportsAndStatisticsPage()));
+      case Routers.userManagementPage:
+        return MaterialPageRoute(
+            builder: (_) => const Directionality(
+                textDirection: TextDirection.rtl, child: UserManagementPage()));
       default:
         return MaterialPageRoute(
             builder: (_) => const Scaffold(
