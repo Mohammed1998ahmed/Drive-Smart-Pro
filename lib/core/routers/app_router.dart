@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../feature/login/login_page_widght.dart';
 import '../../feature/reports_and_statistics/reportsAndStatistics.dart';
+import '../../feature/reservations/reservations.dart';
 import 'router.dart';
 
 class App_Roters {
@@ -32,6 +33,10 @@ class App_Roters {
         return MaterialPageRoute(
             builder: (_) => const Directionality(
                 textDirection: TextDirection.rtl, child: UserManagementPage()));
+      case Routers.reservationsPage:
+        return MaterialPageRoute(
+            builder: (_) => Directionality(
+                textDirection: TextDirection.rtl, child: ReservationsPage()));
       default:
         return MaterialPageRoute(
             builder: (_) => const Scaffold(
