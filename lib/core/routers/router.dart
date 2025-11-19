@@ -5,6 +5,7 @@ class Routers {
   static const String home = '/home';
   static const String reportsAndStatisticsPage = '/ReportsAndStatisticsPage';
   static const String userManagementPage = '/userManagementPage';
+  static const String reservationsPage = '/reservationsPage';
 
   static const String details = '/details';
 }

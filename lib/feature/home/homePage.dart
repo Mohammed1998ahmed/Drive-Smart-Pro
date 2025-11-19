@@ -1,4 +1,5 @@
 import 'package:drivesmart/core/themes/colors.dart';
+import 'package:drivesmart/feature/reservations/reservations.dart';
 import 'package:drivesmart/feature/user_Management/userManagement.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -27,7 +28,7 @@ class HomePage extends StatelessWidget {
                 0 => const homepageBase1(),
                 1 => const UserManagementPage(),
                 2 => const homepageBase1(),
-                3 => const homepageBase1(),
+                3 => ReservationsPage(),
                 4 => const ReportsAndStatisticsPage(),
                 _ => const homepageBase1(),
               },

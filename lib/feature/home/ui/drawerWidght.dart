@@ -77,7 +77,9 @@ class DrawerWidght extends StatelessWidget {
           ElevatedButtonWidght(
             cubit: cubit,
             numberItems: 3,
-            onPressed: () {},
+            onPressed: () {
+              cubit.changePages(3);
+            },
             iconData: Icons.book_online,
             nameButtom: ' إدارة الحجوزات ',
             numberItem: true,
