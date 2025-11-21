@@ -1,3 +1,4 @@
+import 'package:drivesmart/feature/course_Management/course_management.dart';
 import 'package:drivesmart/feature/home/homePage.dart';
 import 'package:drivesmart/feature/home/logic/cubit/home_cubit.dart';
 import 'package:drivesmart/feature/user_Management/userManagement.dart';
@@ -37,6 +38,11 @@ class App_Roters {
         return MaterialPageRoute(
             builder: (_) => Directionality(
                 textDirection: TextDirection.rtl, child: ReservationsPage()));
+      case Routers.courseManagementPage:
+        return MaterialPageRoute(
+            builder: (_) => const Directionality(
+                textDirection: TextDirection.rtl,
+                child: CourseManagementPage()));
       default:
         return MaterialPageRoute(
             builder: (_) => const Scaffold(

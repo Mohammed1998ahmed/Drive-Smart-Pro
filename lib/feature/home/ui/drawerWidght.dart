@@ -68,7 +68,9 @@ class DrawerWidght extends StatelessWidget {
           ElevatedButtonWidght(
             cubit: cubit,
             numberItems: 2,
-            onPressed: () {},
+            onPressed: () {
+              cubit.changePages(2);
+            },
             iconData: Icons.library_books,
             nameButtom: ' إدارة الدورات ',
             numberItem: false,
