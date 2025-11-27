@@ -102,7 +102,9 @@ class DrawerWidght extends StatelessWidget {
           ElevatedButtonWidght(
             cubit: cubit,
             numberItems: 5,
-            onPressed: () {},
+            onPressed: () {
+              cubit.changePages(5);
+            },
             iconData: Icons.cast_for_education,
             nameButtom: '  المحتوى التعليمي ',
             numberItem: false,
