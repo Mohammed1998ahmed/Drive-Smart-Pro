@@ -40,6 +40,8 @@ class CourseManagementPage extends StatelessWidget {
                   // physics: NeverScrollableScrollPhysics(),
                   itemBuilder: (context, index) => cardDetailsWidght(
                         onPressedDeseploy: () {},
+                        onPressedDelete: () {},
+                        onPressedEdit: () {},
                       )),
             ),
           ),

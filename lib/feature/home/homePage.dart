@@ -1,5 +1,6 @@
 import 'package:drivesmart/core/themes/colors.dart';
 import 'package:drivesmart/feature/course_Management/course_management.dart';
+import 'package:drivesmart/feature/educational_content/educationalContent.dart';
 import 'package:drivesmart/feature/reservations/reservations.dart';
 import 'package:drivesmart/feature/user_Management/userManagement.dart';
 import 'package:flutter/material.dart';
@@ -31,6 +32,7 @@ class HomePage extends StatelessWidget {
                 2 => const CourseManagementPage(),
                 3 => ReservationsPage(),
                 4 => const ReportsAndStatisticsPage(),
+                5 => const EducationalContentPage(),
                 _ => const homepageBase1(),
               },
             ],

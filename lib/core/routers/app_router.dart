@@ -1,4 +1,5 @@
 import 'package:drivesmart/feature/course_Management/course_management.dart';
+import 'package:drivesmart/feature/educational_content/educationalContent.dart';
 import 'package:drivesmart/feature/home/homePage.dart';
 import 'package:drivesmart/feature/home/logic/cubit/home_cubit.dart';
 import 'package:drivesmart/feature/user_Management/userManagement.dart';
@@ -43,6 +44,11 @@ class App_Roters {
             builder: (_) => const Directionality(
                 textDirection: TextDirection.rtl,
                 child: CourseManagementPage()));
+      case Routers.educationalContentPage:
+        return MaterialPageRoute(
+            builder: (_) => const Directionality(
+                textDirection: TextDirection.rtl,
+                child: EducationalContentPage()));
       default:
         return MaterialPageRoute(
             builder: (_) => const Scaffold(
